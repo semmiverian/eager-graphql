@@ -45,10 +45,7 @@ const schema = new gql.GraphQLSchema({
           age: {type: gql.GraphQLInt}
         },
         async resolve(_parent, args) {
-           const student = await Student.create(args)
-           return {
-             name: student.name
-           }
+           return await Student.create(args)
         }
       }
     }
